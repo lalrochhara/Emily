@@ -1,0 +1,7 @@
+echo "Pulling Changes from github..."
+git pull -f -q 
+echo "Installing Requirements..."
+pip install --quiet -U -r requirements.txt
+python3 -m Emily
+echo "Stoping"
+echo "Stoped"
