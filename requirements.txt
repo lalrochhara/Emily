@@ -16,7 +16,7 @@ geopy
 nltk
 psutil
 aiohttp>=2.2.5
-Pillow==9.5.0
+Pillow==10.0.0
 jikanpy~=4.3.2
 speedtest-cli
 regex
