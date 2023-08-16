@@ -1,10 +1,7 @@
-# Replace these placeholders with your actual information
-GITHUB_USERNAME="lalrochhara"
-REPO_NAME="Emily"
-TEMPLATE_CONTENT="
-
+# Who is Miss Emily?
+Miss Emily is Telegram Group Management bot...
 # Miss Emily
-[Emily](https://i.ibb.co/K5PX8qy/Emily.png)
+<center><img src="https://i.ibb.co/K5PX8qy/Emily.png" alt="Alt Text" width="400" height="399"></center>
 
 Super Fast and lots of features.
 
