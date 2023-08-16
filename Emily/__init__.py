@@ -2,8 +2,6 @@ import logging
 import os
 import sys
 import time
-import atexit
-import asyncio
 
 import telegram.ext as tg
 from aiohttp import ClientSession
@@ -162,14 +160,18 @@ else:
     except ValueError:
         raise Exception("Your blacklisted chats list does not contain valid integers.")
 
+
 DRAGONS.add(OWNER_ID)
 DEV_USERS.add(OWNER_ID)
 
+
 updater = tg.Updater(TOKEN, workers=WORKERS, use_context=True)
 telethn = TelegramClient("Emily", API_ID, API_HASH)
+
 pbot = Client("Emily", api_id=API_ID, api_hash=API_HASH, bot_token=TOKEN)
 dispatcher = updater.dispatcher
 aiohttpsession = ClientSession()
+await AsyncioCurl.close() #added this line
 
 # Bot info
 print("[INFO]: Getting Bot Info...")
@@ -194,29 +196,3 @@ from Emily.modules.helper_funcs.handlers import (
 tg.RegexHandler = CustomRegexHandler
 tg.CommandHandler = CustomCommandHandler
 tg.MessageHandler = CustomMessageHandler
-
-# Function to create aiohttp session
-async def create_aiohttp_session():
-    global aiohttpsession
-    aiohttpsession = ClientSession()
-
-# Function to close aiohttp session
-async def close_aiohttp_session():
-    await aiohttpsession.close()
-
-# Run the main function
-async def main():
-    # ... (other initialization code)
-
-    # Create aiohttp session
-    await create_aiohttp_session()
-
-    # ... (rest of your bot's logic)
-
-# Run the main function
-if __name__ == '__main__':
-    loop = asyncio.get_event_loop()
-    loop.run_until_complete(main())
-
-# Setup atexit to close aiohttp session on program exit
-atexit.register(asyncio.run, close_aiohttp_session())
