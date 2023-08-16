@@ -170,7 +170,6 @@ telethn = TelegramClient("Emily", API_ID, API_HASH)
 
 pbot = Client("Emily", api_id=API_ID, api_hash=API_HASH, bot_token=TOKEN)
 dispatcher = updater.dispatcher
-aiohttpsession = ClientSession()
 
 # Bot info
 print("[INFO]: Getting Bot Info...")
@@ -195,6 +194,3 @@ from Emily.modules.helper_funcs.handlers import (
 tg.RegexHandler = CustomRegexHandler
 tg.CommandHandler = CustomCommandHandler
 tg.MessageHandler = CustomMessageHandler
-
-# Close aiohttp session
-aiohttpsession.close()
